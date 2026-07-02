@@ -24,7 +24,7 @@ export default {
     <span><a href="#">网站无障碍</a><a href="#">繁体中文</a><a href="#">适老版</a></span>
   </div></div>
   <header class="masthead"><div class="container">
-    <div class="emblem">★</div>
+    <img class="emblem" src="assets/national-emblem.svg" alt="中华人民共和国国徽">
     <div class="titles">
       <h1>全国人民代表为人民服务网</h1>
       <div class="en">REPRESENTATIVES OF THE PEOPLE · SERVING THE PEOPLE</div>
