@@ -2,6 +2,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { stats, search, sourceLabel } from '../api.js'
 import RepCard from '../components/RepCard.js'
+import VideoShowcase from '../components/VideoShowcase.js'
 
 const NOTICES = [
   { t: '关于建设全国人民代表为人民服务网的说明', d: '2026-06-30' },
@@ -12,7 +13,7 @@ const NOTICES = [
 ]
 
 export default {
-  components: { RepCard },
+  components: { RepCard, VideoShowcase },
   setup() {
     const router = useRouter()
     const kw = ref('')
@@ -45,6 +46,8 @@ export default {
       </div>
     </div>
   </div></section>
+
+  <video-showcase></video-showcase>
 
   <div class="container">
     <div class="cols">

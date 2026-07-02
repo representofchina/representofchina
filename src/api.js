@@ -29,6 +29,23 @@ export function avatarUrl(rep) {
   return mode.value === 'api' ? `/avatar/${rep.id}` : `avatars/${rep.id}.jpg`
 }
 
+export function avatarUrlById(id) {
+  return mode.value === 'api' ? `/avatar/${id}` : `avatars/${id}.jpg`
+}
+
+// 视频始终作为静态资源部署，直接读取相对路径
+export function videoUrl(file) { return `video/${file}` }
+
+let _videos = null
+export async function getVideos() {
+  if (_videos) return _videos
+  try {
+    const r = await fetch('data/videos.json', { cache: 'no-store' })
+    _videos = r.ok ? await r.json() : []
+  } catch (e) { _videos = [] }
+  return _videos
+}
+
 function matches(r, f) {
   if (f.q && !(r.name || '').includes(f.q)) return false
   if (f.source && r.source !== f.source) return false
